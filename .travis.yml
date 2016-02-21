@@ -10,6 +10,6 @@ deploy:
   provider: heroku
   api_key:
     secure: LS5Kb0oy9AYFMqCp4Zaaw2wWjj/fUjUbpIl+vJakZklg+cNONLS7ytL3Hzuqmv2FVOfccf/h4XtkCrHhrR3kmlXB53Whg0eJmQVOZKGF8Q/uhfyr9EjPTA56uO9dlCvJnlxXAbhawQvEv5Ip8tAG1582sC5Xil55BDw2cX5A7ZzCxXCaeIy8TspFgc1M9QTnDAE7+8LmmjpHmIMb23hWHGwCcwCAr0dqb7qQ3ARUJZihA/J8vpTqZg8sABZ0zDHyJtHO87jOW1AmkHcsYcrewDR4FBixPSjvLld7XcedDskK5vHatFtC6B2QgVus8wdHPb+cIJQRBLTKsW4zo2+rXo5mMDBGrp1mSPd5tKyI1YzCkoMTuelZSG1CiKp5prjW2lvufFn++0KA85dAHp4XTRg9ddUVh+l+lIo1ay5pj9PwuzuMig3SYXJZrVAc1g1txpqEqU83N6HIsV8E39UYXONfDyLK/2QO/duwufxFIgK3X42rbT0nKYptT79FIJgYwba7L7b5zIxZ8PYO55zk8nJXZJTCdjD2mRbKerrxnFCNGdvr6CXEMe+7s+UwvRCr3K+aqwTxyHN/w2nY/Wi91MJfZbFuu8dunqdRP72Lvdiz/8ST1rSBLFRkgPhoRKSV3KczWK0Jpxps5KFa9todCl4iKCvwnUU0q2OtezrXyJI=
-  app: vast-badlands-98282
+  app: thawing-springs-61633
   on:
     repo: Blodir/Rails-Coursework
