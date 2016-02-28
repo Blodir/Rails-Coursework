@@ -1,0 +1,17 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th></th>
+    <th>average</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% stuff.each do |i| %>
+      <tr>
+        <td><%= link_to i.name, i %></td>
+        <td><%= round(i.average_rating) %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
