@@ -1,7 +1,6 @@
 class BeersController < ApplicationController
   before_action :set_beer, only: [:show, :edit, :update, :destroy]
   before_action :ensure_that_signed_in, except: [:index, :show]
-  before_action :set_breweries_and_styles_for_template, only: [:new, :edit, :create]
 
   # GET /beers
   # GET /beers.json
@@ -12,21 +11,21 @@ class BeersController < ApplicationController
   # GET /beers/1
   # GET /beers/1.json
   def show
-   @rating = Rating.new
-   @rating.beer = @beer
- end
+    @rating = Rating.new
+    @rating.beer = @beer
+  end
 
   # GET /beers/new
   def new
     @beer = Beer.new
     @breweries = Brewery.all
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    @styles = Style.all
   end
 
   # GET /beers/1/edit
   def edit
     @breweries = Brewery.all
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    @styles = Style.all
   end
 
   # POST /beers
@@ -40,7 +39,7 @@ class BeersController < ApplicationController
         format.json { render :show, status: :created, location: @beer }
       else
         @breweries = Brewery.all
-        @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+        @styles = Style.all
         format.html { render :new }
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
@@ -69,11 +68,6 @@ class BeersController < ApplicationController
       format.html { redirect_to beers_url, notice: 'Beer was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
-
-  def set_breweries_and_styles_for_template
-    @breweries = Brewery.all
-    @styles = Style.all
   end
 
   private

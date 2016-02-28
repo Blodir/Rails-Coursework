@@ -1,9 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h2> <%= @place.name %> </h2>
 
-<h2><%= @place.name %></h2>
+<p> <%= @place.street %> </p>
 
-<p><%= @place.street %></p>
+<p> <%= "#{@place.zip} #{@place.city}" %> </p>
 
-<p><%= @place.zip %> <%= @place.city %></p>
-
-<iframe  width="500" height="350" frameborder="0" style="border:0" src="<%= @place.blogmap %>&zoom=10&key=AIzaSyAGZr7exyBRFB4LowJYdvLxZWtc0QsT6Lw"></iframe>
+<iframe src="<%=@place.map_url%>"</iframe>

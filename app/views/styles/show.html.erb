@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong><h2><%= @style.name %></h2></strong>
-</p>
+<h2>
+  <%= @style.name %>
+</h2>
 
-<p>
+<blockquote>
   <%= @style.description %>
-</p>
+</blockquote>
 
-<% if @style.beers.any? %>
-    <p><strong>beers</strong></p>
-    <ul>
-      <% @style.beers.each do |beer|%>
-          <li><%= link_to beer.name, beer %> by <%= link_to beer.brewery.name, beer.brewery %></li>
-      <% end %>
-    </ul>
-<% else %>
-    <p><strong>There are no beers with this style</strong></p>
+<h3>beers</h3>
+
+<ul>
+  <% @style.beers.each do |beer| %>
+    <li>
+      <%= link_to beer.name, beer %> by
+      <em>
+        <%= link_to beer.brewery.name, beer.brewery %>
+      </em>
+    </li>
+  <% end %>
+</ul>
+
+<% if current_user %>
+  <%= link_to 'Edit', edit_style_path(@style) %>
 <% end %>
-
-
-
-
-<%= link_to 'Edit', edit_style_path(@style), class:'' %> |
-<%= link_to 'Destroy', @style, method: :delete, data: { confirm: 'Are you sure?' }, class:'' %>
