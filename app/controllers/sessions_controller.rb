@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
       user = User.create
       user.username = env["omniauth.auth"].info.nickname
       user.password = user.password_confirmation = SecureRandom.urlsafe_base64(n=6)
+      user.admin = false
       session[:user_id] = user.id
       redirect_to user_path(user), notice: "welcome"
     elsif user && !user.iced
