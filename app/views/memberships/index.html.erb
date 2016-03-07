@@ -2,7 +2,7 @@
 
 <h1>Listing Memberships</h1>
 
-<table class="panel panel-default table table-hover">
+<table>
   <thead>
     <tr>
       <th>User</th>
@@ -17,8 +17,8 @@
         <td><%= membership.user_id %></td>
         <td><%= membership.beer_club_id %></td>
         <td><%= link_to 'Show', membership %></td>
-        <td><%= link_to 'Edit', edit_membership_path(membership), class:'btn btn-default' %></td>
-        <td><%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        <td><%= link_to 'Edit', edit_membership_path(membership) %></td>
+        <td><%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

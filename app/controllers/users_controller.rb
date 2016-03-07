@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.includes(:beers, :ratings).all
   end
 
   # GET /users/1
@@ -62,6 +62,15 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def toggle_lock
+    user = User.find(params[:id])
+    user.update_attribute :locked, (not user.locked)
+
+    new_status = user.locked? ? "unlocked" : "locked"
+
+    redirect_to :back, notice:"user account #{new_status}"
   end
 
   private
